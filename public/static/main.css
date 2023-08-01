@@ -1,0 +1,207 @@
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:url("pictures/wind-background.png");
+    background-attachment: fixed;
+}
+
+/* .background-img {
+    background-image: url("pictures/wind-background.png");
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    position: fixed;
+    z-index: -1;
+} */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.wind-speed-container {
+    margin-top: 5px;
+    justify-content: center;
+    text-align: center;
+}
+.wind-txt {
+    color: rgba(25,57,168,1);
+    margin-left: 10px;
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 1.5vw;
+    text-align: left;
+    text-transform: uppercase;
+    display: block;
+}
+
+.wind-value {
+    color: rgba(62,88,77,1);
+    margin-top: 25px;
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 4.0vw;
+}
+
+.production-container {
+    margin-top: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+.production-txt {
+    color: rgba(25,57,168,1);
+    margin-right: 10px;
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 1.5vw;
+    text-align: right;
+    text-transform: uppercase;
+    display: block;
+}
+
+.production-value {
+    width: 340px;
+    color: rgba(62,88,77,1);
+    /* position: absolute; */
+    margin-top: 25px;
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 4.0vw;
+    text-align: right;
+}
+
+.bubble-container {
+    margin-top: 35vw;
+    position: relative;
+    /* height: 1000px; */   
+}
+
+.bubble-1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-32.0vw, -32.0vw);
+    width: 38.0vw;
+    height: 38.0vw;
+    background: rgba(255,255,255, 0.9);
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+}
+
+.power-value {
+    color: rgba(87,195,150,1);
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 10vw;
+    text-align: center;
+    margin-top: 10vw;
+    display: block;
+}
+
+.power-txt {
+    color: rgba(25,57,168,1);
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.bubble-2 {
+    width: 23vw;
+    height: 23vw;
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(7.6vw, -34vw);
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+}
+
+.voltage-value {
+    color: rgba(87,195,150,1);
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 6vw;
+    text-align: center;
+    display: block;
+    margin-top: 5vw;
+  }
+
+.voltage-txt {
+    color: rgba(25,57,168,1);
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 2.3vw;
+    text-align: center;
+}
+
+.bubble-3 {
+    width: 18.2vw;
+    height: 18.2vw;
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(5.5vw, -10vw);
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+}
+
+.current-value {
+    color: rgba(87,195,150,1);
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 4.5vw;
+    text-align: center;
+    display: block;
+    margin-top: 4vw;
+}
+
+.current-txt {
+    color: rgba(25,57,168,1);
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+.statiscics-content {
+    position: relative;
+    margin-top: 48vw;
+    bottom: 10px;
+    /* height: 400px; */
+    background: rgba(218,239,255,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.statistics-txt {
+    color: rgba(25,57,168,1);
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+}
+
+.chart-container {
+    text-align: center;
+    width: 100%;
+    /* height: 50%; */
+}
