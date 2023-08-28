@@ -57,10 +57,27 @@
                     <span class="statistics-txt">Statistics</span>
 
                     <div class="chart-container">
-                        <canvas id="myChart" style="display: inline-block; box-sizing: content-box;"></canvas>
+                        <canvas id="weeklyProductionChart" style="display: inline-block; box-sizing: content-box;"></canvas>
                         <script src="../script/chart-script.js"></script>
                     </div>
 
+                </div>
+
+
+                <div class="wrapper">
+                    <span class="statistics-txt">Statistics</span>
+                    
+                    <div class="carousel-container">
+                      <div class="arrow left-arrow"><i class="fa fa-arrow-circle-left fa-3x"></i></div>
+                      <ul class="carousel">
+                        <li><img src="https://s3.amazonaws.com/dauersampleimages/nature1.jpg">
+                        <li><img src="https://s3.amazonaws.com/dauersampleimages/nature2.jpg">
+                        <li><img src="https://s3.amazonaws.com/dauersampleimages/nature3.jpg">
+                      </ul>
+
+                      
+                      <div class="arrow right-arrow"><i class="fa fa-arrow-circle-right fa-3x"></i></div>
+                    </div>
                 </div>
             <!-- </div> -->
        
@@ -100,7 +117,9 @@
             })
 
             var database = firebase.database();
-
+            var dataRef = database.ref('voltage/float');
+            const var_name = document.querySelector('#id_name');
+            
             var dataRef1 = database.ref('voltage/float');
             var dataRef2 = database.ref('test/float');
 

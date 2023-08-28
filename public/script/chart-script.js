@@ -1,5 +1,5 @@
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
+var ctx = document.getElementById('weeklyProductionChart').getContext('2d');
+var weeklyProductionChart = new Chart(ctx, {
   type: 'line',
   data: {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
