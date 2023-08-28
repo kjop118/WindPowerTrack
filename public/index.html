@@ -91,9 +91,9 @@
             firebase.initializeApp(firebaseConfig);
             // const app = initializeApp(firebaseConfig);
             const db = firebase.firestore();
-            db.settings({ timestampsInSnapshots: true }); 
+            // db.settings({ timestampsInSnapshots: true }); 
 
-            db.collection('name_of_collection').get().then((snapshot) => {
+            db.collection('WindTurbine').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                     console.log(doc.data());
                 });
