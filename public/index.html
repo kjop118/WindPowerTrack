@@ -79,6 +79,48 @@
                       <div class="arrow right-arrow"><i class="fa fa-arrow-circle-right fa-3x"></i></div>
                     </div>
                 </div>
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="{{ loop.index }}" {% if loop.index == 1 %}class="active"{% endif %}></li>
+                    </ol>
+      
+                    <div class="carousel-inner text-center">
+                        {% if loop.index == 1 %}
+                        <div class="carousel-item statiscics-content active">
+                            <span class="statistics-txt">Statistics</span>
+        
+                            <div class="chart-container">
+                                <canvas id="weeklyProductionChart" style="display: inline-block; box-sizing: content-box;"></canvas>
+                                <script src="../script/chart-script.js"></script>
+                            </div>
+        
+                        </div>
+                        {% else %}
+
+                        <div class="carousel-item statiscics-content active">
+                            <span class="statistics-txt">Statistics</span>
+        
+                            <div class="chart-container">
+                                <canvas id="weeklyProductionChart" style="display: inline-block; box-sizing: content-box;"></canvas>
+                                <script src="../script/chart-script.js"></script>
+                            </div>
+        
+                        </div>
+                        {% endif %}
+                    </div>
+      
+                  {% if matchedRestaurants|length > 0 %}
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Poprzedni</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Następny</span>
+                    </a>
+                  {% endif %}
+              </div>
             <!-- </div> -->
        
         <!-- </div> -->
