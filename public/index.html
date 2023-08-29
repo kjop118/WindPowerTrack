@@ -106,7 +106,7 @@
             var date = year+"-"+month+"-"+day
             console.log(currentDate);
 
-            getDailyProduction(date);
+            setInterval(getDailyProduction(date), 60000);
             setInterval(getCurrentPower, 60000);
 
 
@@ -123,9 +123,9 @@
                             var power = current * voltage;
                             console.log("power: ", power);
                             resolve(power);
-                            document.getElementById('current').innerHTML = current + "A";
-                            document.getElementById('voltage').innerHTML = voltage + "V";
-                            document.getElementById('power').innerHTML = power + "W";
+                            document.getElementById('current').innerHTML = current + " A";
+                            document.getElementById('voltage').innerHTML = voltage + " V";
+                            document.getElementById('power').innerHTML = power + " W";
                             
                         } else {
                             console.log("Dokument nie istnieje");
