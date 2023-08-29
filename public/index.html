@@ -105,7 +105,7 @@
             var day = currentDate.getDate();
             var date = year+"-"+month+"-"+day
             console.log(currentDate);
-            
+
             getDailyProduction(date);
             getCurrentPower();
 
@@ -146,30 +146,31 @@
                         powerSum = powerSum + pomiar.data().power;
                         console.log(pomiar.id, '=>', pomiar.data().power );
                     });
+                    powerSum = powerSum/60;
                     console.log("power sum: ", powerSum/60, "Wh");
-                    document.getElementById('power-sum').innerHTML = powerSum/60 + "Wh";
+                    document.getElementById('power-sum').innerHTML = powerSum.toFixed(2) + "Wh";
                 });
                 
             }
 
-            var database = firebase.database();
-            var dataRef = database.ref('voltage/float');
-            const var_name = document.querySelector('#id_name');
+            // var database = firebase.database();
+            // var dataRef = database.ref('voltage/float');
+            // const var_name = document.querySelector('#id_name');
             
-            var dataRef1 = database.ref('voltage/float');
-            var dataRef2 = database.ref('test/float');
+            // var dataRef1 = database.ref('voltage/float');
+            // var dataRef2 = database.ref('test/float');
 
-            dataRef1.on('value', function(getdata1){
-                var vol = getdata1.val();
-                document.getElementById('voltage').innerHTML = vol + "V";
+            // dataRef1.on('value', function(getdata1){
+            //     var vol = getdata1.val();
+            //     document.getElementById('voltage').innerHTML = vol + "V";
 
-            })
+            // })
 
-            dataRef2.on('value', function(getdata2){
-                var cur = getdata2.val();
-                document.getElementById('current').innerHTML = cur + "A";
+            // dataRef2.on('value', function(getdata2){
+            //     var cur = getdata2.val();
+            //     document.getElementById('current').innerHTML = cur + "A";
 
-            })
+            // })
         </script>
 
     </body>
