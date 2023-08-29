@@ -107,7 +107,7 @@
             console.log(currentDate);
 
             getDailyProduction(date);
-            getCurrentPower();
+            setInterval(getCurrentPower, 60000);
 
 
             function getCurrentPower() {
