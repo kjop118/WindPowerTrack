@@ -98,6 +98,23 @@
                     console.log(doc.data());
                 });
             })
+            getDailyProduction(date);
+            
+            function getDailyProduction(date) {
+                var powerSum = 0;
+                const db = firebase.firestore();
+                var collection = db.collection('WindTurbine');
+                var query = collection.where('date', '==', date);
+                query.get().then(snapshot => {
+                    snapshot.forEach(pomiar => {
+                        powerSum = powerSum + pomiar.data().power;
+                        console.log(pomiar.id, '=>', pomiar.data().power );
+                    });
+                    console.log("power sum: ", powerSum/60, "Wh");
+                    document.getElementById('power').innerHTML = powerSum/60 + "Wh";
+                });
+                
+            }
 
             var database = firebase.database();
             var dataRef = database.ref('voltage/float');
