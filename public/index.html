@@ -23,10 +23,10 @@
            
             <div class="container">
     
-                <div class="wind-speed-container">
+                <!-- <div class="wind-speed-container">
                     <span class="wind-txt">Wind speed</span>
                     <span class="wind-value">20 m/s</span>
-                </div>
+                </div> -->
 
                 <div class="production-container">
                     <span class="production-txt">Today’s power production</span>
@@ -148,7 +148,7 @@
                     });
                     powerSum = powerSum/60;
                     console.log("power sum: ", powerSum/60, "Wh");
-                    document.getElementById('power-sum').innerHTML = powerSum.toFixed(2) + "Wh";
+                    document.getElementById('power-sum').innerHTML = powerSum.toFixed(2) + " Wh";
                 });
                 
             }
