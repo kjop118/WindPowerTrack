@@ -55,7 +55,6 @@ body {
 .production-value {
     width: 340px;
     color: rgba(62,88,77,1);
-    /* position: absolute; */
     margin-top: 25px;
     font-family: Nunito;
     font-weight: Bold;
@@ -66,7 +65,6 @@ body {
 .bubble-container {
     margin-top: 35vw;
     position: relative;
-    /* height: 1000px; */   
 }
 
 .bubble-1 {
@@ -103,7 +101,6 @@ body {
     width: 23vw;
     height: 23vw;
     position: absolute;
-    /* top: 50%; */
     left: 50%;
     transform: translate(7.6vw, -34vw);
     background: rgba(255,255,255,0.9);
@@ -134,7 +131,6 @@ body {
     width: 18.2vw;
     height: 18.2vw;
     position: absolute;
-    /* top: 50%; */
     left: 50%;
     transform: translate(5.5vw, -10vw);
     background: rgba(255,255,255,0.9);
@@ -161,27 +157,6 @@ body {
     text-align: center;
 }
 
-/* .statiscics-content {
-    position: relative;
-    margin-top: 48vw;
-    bottom: 10px;
-    height: 400px;
-    background: rgba(218,239,255,1);
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    justify-content: center;
-    text-align: center;
-} */
-
-/* .swiper-slide {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-} */
-
 .swiper-slide .statiscics-carousel-content {
     background: rgba(218,239,255,1);
     border-top-left-radius: 50px;
@@ -189,22 +164,21 @@ body {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     bottom: 10px; 
-    /* margin-left:20px; */
-    /* margin-right:20px; */
-    height: 60vh;
+    height: 60vw;
     width: 80%;
-    /* text-align: center; */
     display: block;
     margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px rgba(62,88,77,0.5);
 }
-
 
 #chart1, #chart2, #chart3 {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 50vw;
 }
 
-.carousel-tst {
+.carousel-cointainer {
     display: flex;
     align-items: center;
     position: relative;
