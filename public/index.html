@@ -364,9 +364,9 @@
 
                         if (power >= 1000) {
                             power = power/1000;
-                            document.getElementById('power').innerHTML = power + " kW";
+                            document.getElementById('power').innerHTML = power.toFixed(2) + " kW";
                         } else {
-                            document.getElementById('power').innerHTML = power + " W";
+                            document.getElementById('power').innerHTML = power.toFixed(2) + " W";
                         }
                         
                     } else {
