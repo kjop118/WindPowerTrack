@@ -11,12 +11,12 @@ body {
     justify-content: space-between;
     position: relative;
 }
-.wind-speed-container {
+.mode-container {
     margin-top: 5px;
     justify-content: center;
     text-align: center;
 }
-.wind-txt {
+.mode-txt {
     color: rgba(25,57,168,1);
     margin-left: 10px;
     font-family: Nunito;
@@ -27,7 +27,7 @@ body {
     display: block;
 }
 
-.wind-value {
+.mode-value {
     color: rgba(62,88,77,1);
     margin-top: 25px;
     font-family: Nunito;
@@ -178,7 +178,7 @@ body {
     height: 50vw;
 }
 
-.carousel-cointainer {
+.carousel-container {
     display: flex;
     align-items: center;
     position: relative;

@@ -35,23 +35,19 @@
             firebase.initializeApp(firebaseConfig);
         </script>
 
-        <!-- <script src="../script/chart.js"></script> -->
-
         <title>Wind Power Trucker</title>
     </head>
     <body>
         <div class="container">
-
-            <!-- <div class="wind-speed-container">
-                <span class="wind-txt">Wind speed</span>
-                <span class="wind-value">20 m/s</span>
-            </div> -->
-
             <div class="production-container">
                 <span class="production-txt">Today’s power production</span>
                 <span class="production-value" id="power-sum">2,14 kW</span>
             </div>
 
+            <div class="mode-container">
+                <span class="mode-txt">Mode</span>
+                <span class="mode-value" id="mode">12 V</span>
+            </div>
         </div>
 
         <div class="bubble-container">
@@ -70,23 +66,11 @@
                 <span class="current-txt">electric current</span>
             </div>
         </div>
-        
-        <!-- <div class="statistics-container"> -->
-            <!-- <div class="statiscics-content">
-                <span class="statistics-txt">Statistics</span>
 
-                <div class="chart-container">
-                    <canvas id="weeklyProductionChart" style="display: inline-block; box-sizing: content-box;"></canvas>
-                    <script src="../script/chart-script.js"></script>
-                </div>
 
-            </div> -->
-
-        <div class="carousel-cointainer">
+        <div class="carousel-container">
             <div class="swiper">
-                <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="statiscics-carousel-content">
                             <span class="statistics-txt">Statistics</span>
@@ -168,7 +152,6 @@
                                 </script>
                             </div>
                         </div>
-                        
                     </div>
                     <div class="swiper-slide">
                         <div class="statiscics-carousel-content">
@@ -193,8 +176,6 @@
                                             var time = doc.data().time;
                                             var hour = time.split(':')[0];
                                             var power = doc.data().power;
-                                            // console.log('time: ', hour, "power: ", power);
-                                            // console.log("czas: ", hour, "power: ", power);
                                             
                                             if (hourProduction.has(hour)) {
                                                 hourProduction.set(hour, (hourProduction.get(hour) + power));
@@ -218,9 +199,6 @@
                                             tmp = hourProduction.get(key)/60 || 0.0;
                                             thisDayProduction.push(tmp);
                                         }
-                                        // console.log(thisDayProduction);
-                                        // = hourProduction.get(date)/60.0 || 0.0);
-                                        
                                         
                                         var chartID = document.getElementById('chart2').getContext('2d');
                                         var myChart = new Chart(chartID, {
@@ -296,8 +274,6 @@
                                             tmp = monthProduction.get(key)/60 || 0.0;
                                             monthsPowerSum.push(tmp);
                                         }
-                
-                                        // console.log("monthsPowerSum: ",monthsPowerSum);
                                         
                                         var chartID = document.getElementById('chart3').getContext('2d');
                                         var myChart = new Chart(chartID, {
@@ -329,7 +305,6 @@
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
-                
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
@@ -344,23 +319,26 @@
             var date = year+"-"+month+"-"+day
 
             getDailyProduction(date);
-            getCurrentPower();
+            getDatabaseData();
 
             setInterval(refreshData, 60000);
 
-            function getCurrentPower() {
+            function getDatabaseData() {
                 var db = firebase.firestore();
                 var collection = db.collection('WindTurbine');
                 var realTimeReadings = collection.doc('realTime_reading');
 
                 realTimeReadings.get().then((doc) => {
                     if (doc.exists) {
+                        var mode = doc.data().mode;
+
                         var current = doc.data().current;
                         var voltage = doc.data().voltage;
                         var power = current * voltage;
 
                         document.getElementById('current').innerHTML = current + " A";
                         document.getElementById('voltage').innerHTML = voltage + " V";
+                        document.getElementById('mode').innerHTML = mode + " V";
 
                         if (power >= 1000) {
                             power = power/1000;
@@ -400,7 +378,7 @@
                 var day = currentDate.getDate();
                 var date = year+"-"+month+"-"+day;
                 getDailyProduction(date);
-                getCurrentPower();
+                getDatabaseData();
             }
         </script>
 
